@@ -1,97 +1,81 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title id="">Weather Sprint</title>
+    <title>Weather Sprint</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="bg-container">
+    
+    <div class="app-container">
+        
+        <header class="top-bar">
+            <button id="homeBtn" class="nav-btn">Home</button>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search Bar">
+                <button id="searchBtn"><i class="bi bi-search"></i></button>
+            </div>
+            <div class="top-icon">
+                <i class="bi bi-star-fill header-star"></i>
+            </div>
+        </header>
 
-        <main class="weather-card">
+        <div class="content-grid">
 
-            <nav class="top-bar">
-                <button id="homeBtn">Home</button>
-                <div id="output"></div>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search Bar">
-                    <button id="searchBtn">Search</button>
+            <section class="left-panel glass-card">
+                <div class="date-display">
+                    <h3 id="current-date">--</h3>
                 </div>
-            </nav>
 
-            <div class="content">
+                <div class="high-low">
+                    <span id="maxTemp">--° H</span>
+                    <span id="minTemp">--° L</span>
+                </div>
 
-                <section class="current-info">
-                    <h2 id="current-date">--/--/--</h2>
-                    <div class="high-low">
-                        <span id="maxTemp">--° H</span>
-                        <span id="minTemp">--° L</span>
-                    </div>
+                <div class="city-info">
+                    <h1 id="city-name">--</h1>
+                    <button id="saveBtn" class="star-toggle">☆</button>
+                </div>
 
-                    <h1 id="city-name">
-                        -----
-                    </h1>
-                    <button id="saveBtn" class="star-btn">★</button>
-                    <div class="big-temp">
-                        <span id="current-temp">--°</span>
-                    </div>
-                </section>
+                <div class="current-weather-display">
+                    <img id="current-icon" src="" alt="" class="weather-icon-lg hidden">
+                    <span id="current-temp" class="big-temp">--°</span>
+                </div>
+                
+                <div id="output" class="hidden"></div>
+            </section>
 
-                <section class="forecast-info">
-                    <h3>Weekly Forecast</h3>
+            <section class="right-panel">
+                
+                <div class="forecast-row glass-card">
+    
+    <h5 class="forecast-title">Hourly Forecast</h5>
+    <div id="hourly-container" class="scroll-container">
+        </div>
 
-                    <div class="weekly-container">
-                        <div class="day-slot">
-                            <p>Monday</p>
-                            <div class="hour-slot">--°</div>
-                        </div>
-                        <div class="day-slot">
-                            <p>Tuesday</p>
-                            <div class="hour-slot">--°</div>
-                        </div>
-                        <div class="day-slot">
-                            <p>Wednesday</p>
-                            <div class="hour-slot">--°</div>
-                        </div>
-                        <div class="day-slot">
-                            <p>Thursday</p>
-                            <div class="hour-slot">--°</div>
-                        </div>
-                        <div class="day-slot">
-                            <p>Friday</p>
-                            <div class="hour-slot">--°</div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+    <hr class="forecast-divider">
 
-            <div class="bottom-panel">
-                <h3>Favorites</h3>
-                <ul id="favoritesList">
+    <h5 class="forecast-title">5 Day Forecast</h5>
+    <div id="weekly-container" class="scroll-container">
+        </div>
+</div>
 
-                </ul>
-            </div>
+                <div class="favorites-box glass-card">
+                    <h5>Favorites</h5>
+                    <ul id="favoritesList">
+                        </ul>
+                </div>
 
-        </main>
+            </section>
+        </div>
 
     </div>
 
-
-
-
-
-
-
-
     <script type="module" src="./scripts/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
